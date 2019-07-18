@@ -19,6 +19,9 @@ class Listing:
 
     def update_stock(self, new_value):
         self.stock = new_value
+
+    def __repr__(self):
+        return self.name
     
 class Shoppingcart:
 
@@ -60,23 +63,22 @@ mixer   = Listing('mixer', 'jawa', 50000, 20)
 blender = Listing('blender', 'kalimantan', 30000, 20)
 tas     = Listing('tas murah kw1', 'kalimantan', 15000, 2)
 
+shop    = Shoppingcart()
+shop.add_items(mixer)
+shop.add_items(blender)
+shop.add_items(tas)
 
-# s = Shoppingcart()
-#
-# print(b1.stock)
-# s.add_items(b1)
-# print(s.items)
-# print(s.price)
-# print(b1.stock)
+print(shop.items_jawa)
+print(shop.items_non_jawa)
+print(shop.price)
+print(shop.get_total_price())
 
-# if item.location == 'luar jawa':
-#     self.price += 5000
-# else:
-#     self.price += 2000
+shop.remove_items(tas)
 
-
-
-
+print(shop.items_jawa)
+print(shop.items_non_jawa)
+print(shop.price)
+print(shop.get_total_price())
 
 '''
 Input lokasi  : jawa dan luar jawa
