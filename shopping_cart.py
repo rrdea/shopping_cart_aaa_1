@@ -20,3 +20,13 @@ class Shoppingcart:
         return self.items + 1
     def remove_items(self):
         return self.items - 1
+    
+class Shoppingcart2:
+    def __init__(self, items, checkout_time, total_price):
+        self.items = items
+        self.checkout_time = checkout_time
+        self.total_price = total_price
+    def add_items(self):
+        return self.items + 1
+    def remove_items(self):
+        return self.items - 1
