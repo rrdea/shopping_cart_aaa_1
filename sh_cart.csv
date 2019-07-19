@@ -1,6 +1,6 @@
-﻿name;location;price;stock
-Mixer;Jawa;500000;10
-Tas Anak;Jawa;100000;50
-Adaptor Laptop;Kalimantan;325000;15
-Majalah Bobo;Jawa;100000;50
-Durian Beku;Sumatra;70000;40
+﻿name,location,price,stock
+Mixer,Jawa,500000,10
+Tas Anak,Jawa,100000,50
+Adaptor Laptop,Kalimantan,325000,15
+Majalah Bobo,Jawa,100000,50
+Durian Beku,Sumatra,70000,40
