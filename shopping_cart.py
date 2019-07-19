@@ -88,4 +88,6 @@ consumer      : dari jawa
 
 pengembangan :
 1. bisa menentukan berapa byk yg ditambah dan hapus
+
+tes 
 '''
