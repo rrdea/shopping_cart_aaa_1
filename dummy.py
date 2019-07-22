@@ -1,12 +1,23 @@
 class X:
 
-    name = 'hehe'
+    def __init__(self, nama):
+        self.nama = nama
 
-x = X()
+
+x = X('x')
+y = X('y')
 mp = {}
 
-mp[x] = 2
+mp[x] = 15
+mp[y] = 1
+
 print(mp[x])
 
 for ob in mp.keys():
-    print(ob.name)
+    print(ob.nama)
+
+
+a = [1,2,3]
+
+for i in a:
+    print(i)

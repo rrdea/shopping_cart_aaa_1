@@ -1,13 +1,30 @@
+import csv
+
 class Listing:
 
-    def __init__(self, name, location, price, stock):
+    def __init__(self, name, location, shipping_type, price, stock):
         self.name = name
         self.location = location
+        self.shipping_type = shipping_type
         self.price = price
         self.stock = stock
 
+        self.shipping_fee = []
+        with open('tarif.csv') as csv_file:
+            csv_reader = csv.reader(csv_file, delimiter=',')
+            for row in csv_reader:
+                att = row[0].split(',')
+                self.shipping_fee.append(att)
+
     def shipping_cost(self):
-        return 1
+        for fee_district in self.shipping_fee[1:]:
+            if self.location.lower() == fee_district[1].lower():
+                if self.shipping_type == 'REG':
+                    return (int)(fee_district[3])
+                elif self.shipping_type == 'OKE':
+                    return (int)(fee_district[5])
+                else:
+                    return 0
 
     def headline(self):
         return f'{self.name} dari {self.location}' \
@@ -60,9 +77,11 @@ class Shoppingcart:
         return total_price
 
 
-b1      = Listing('barang1', 'malang', 1000, 10)
-b2      = Listing('barang2', 'malang', 1000, 10)
-
+# self, name, location, shipping_type, price, stock
+b1      = Listing('barang1', 'Batukliang', 'REG', 100000, 10)
+b2      = Listing('barang2', 'Batukliang', 'REG', 100000, 10)
+print(b1.headline())
+print(b2.headline())
 shop    = Shoppingcart()
 shop.add_items(b1, 10)
 shop.add_items(b2, 1)
